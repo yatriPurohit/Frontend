@@ -1,0 +1,101 @@
+
+    <mat-toolbar class="toolbar">
+    <span class="name">SHOPPERS</span>
+    
+      <div class="searchContainer">
+      <input class="searchInput" matInput placeholder="Search...">
+      <mat-icon class="searchIcon" >search</mat-icon>
+      </div>
+      <div class="buttondiv">
+      <a routerLink="/registration" class="btn btn-link lk">Register</a>
+      <a routerLink="/login" class="btn btn-link lk">Login</a>
+      
+        <span class="material-icons">shopping_cart
+          <span class="cart-count"></span>
+        </span>
+      </div>
+    
+      </mat-toolbar>
+      <div class="sliderDiv">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+           <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
+           <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
+         </ol>
+         <div class="carousel-inner">
+           <div class="item ">
+             <img  src="assets/img/clo2.jpg" alt="First slide" >
+           </div>
+           <div class="item active">
+             <img  src="assets/img/clo456.jpg" alt="Second slide" >
+           </div>
+           <div class="item">
+             <img  src="assets/img/clo1.jpg" alt="Third slide">
+           </div>
+         </div>
+         <!-- Left and right controls -->
+     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+       <span class="sr-only">Previous</span>
+     </a>
+     <a class="right carousel-control" href="#myCarousel" data-slide="next">
+       <span class="sr-only">Next</span>
+     </a>
+       </div> 
+     </div>
+      <mat-toolbar class="toolbar2">
+        <!-- <a routerLink="/homepage"class="btn btn-link lk">HOME</a> -->
+        <button mat-button="home" (click)="ngOnInit()">All</button>
+        <button mat-button (click)="applyFilterMen()">MEN</button>
+        <!-- <mat-menu #menu="matMenu">
+          [matMenuTriggerFor]="menu" 
+          <button mat-menu-item>Casual</button>
+          <button mat-menu-item>Sports</button>
+          <button mat-menu-item>Formal</button>
+        </mat-menu> -->
+        <button mat-button  (click)="applyFilter()">WOMEN</button>
+        <!--<mat-menu #wmenu="matMenu">
+          [matMenuTriggerFor]="wmenu"
+          <button mat-menu-item  id="cat1">Kurta & Kurti</button>
+          <button mat-menu-item  id="cat2">Trousers</button>
+          <button mat-menu-item  id="cat3">Casual</button>
+        </mat-menu> -->
+      
+      </mat-toolbar>
+      
+    <div class="product-list">
+      <div class="product-card" *ngFor="let product of all">
+      <mat-card>
+        <mat-card-header class="cartHeaderTitle">
+          <mat-card-title class="cardTitle">{{ product.ProductName }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image width="180" height="180" [src]="product.img" (click)="viewproduct(product._id)">
+        <!-- <img class="card-img" mat-card-image src="assets/img/clo3.jpg" > -->
+        <mat-card-content  class="cardContent">
+          <p>Description:-{{ product.Description }} </p>
+        <p>Price:- {{ product.RS }}</p>
+        <!-- <div *ngFor="let color of product.colors">
+          <div>
+              <div [ngStyle]="{backgroundColor:color}"  style="width: 10px;height: 10px; border-radius: 50%;"></div>
+          </div>
+        </div> -->
+        <!-- <p>Category:- {{ product.category}}</p> -->
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary"> Add toCart</button>
+          <button mat-button color="primary"> LIKE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+          
+             
+
+    
+
+      
+
+
+
+    

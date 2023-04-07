@@ -1,0 +1,24 @@
+
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25" style="margin: 50px;"class="card1" >
+        <mat-card class="card2" >
+        <form [formGroup]="profileForm" fxLayout="column" >
+          <div style="margin-left: 70px;">
+            <h1 style="font-family: Segoe Print">Login</h1>
+          </div>
+        <mat-form-field>
+            <input formControlName="email" matInput type="email" placeholder="Email">
+          </mat-form-field> 
+          <br>
+          <mat-form-field>
+            <input formControlName="password" matInput type="password" placeholder="Password">
+          </mat-form-field> 
+          <br><br/>
+        <div style="margin-left: 35px;">
+        <button style="background-color: rgb(188, 188, 199); font-family:Segoe Print " mat-button type="submit"(click)="login()">Login</button>
+        <a routerLink="/registration" class="btn btn-link lk">Register</a>
+        </div>
+        </form>
+        </mat-card>
+    </mat-card>
+</div>
